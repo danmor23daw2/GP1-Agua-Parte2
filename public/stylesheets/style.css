@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.na{
+  margin-left: 15%;
+  color: rgb(69, 69, 213);
+  text-decoration: none;
+}
+.titulo{
+  color:aqua;
+  font-size: 50px;
+  text-align: center;
+}
+.nav{
+  background-color: rgb(154, 185, 243);
+  border: 1px solid rgb(123, 122, 122);
+}
