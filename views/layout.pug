@@ -3,27 +3,28 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js") // Enlazamos Vue.js desde un CDN
+    link(rel='stylesheet', href='https://unpkg.com/leaflet/dist/leaflet.css')
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js") 
+    script(src='https://unpkg.com/leaflet/dist/leaflet.js')
   body
     block content
-
     script.
-      Vue.component('Hola', {
+      Vue.component('Mapa', {
         template: `
           <div>
-            <h2>{{ message }}</h2>
-            <button @click="changeMessage">Cambiar mensaje</button>
+            <div id="map"></div>
           </div>
         `,
         data() {
           return {
-            message: 'Hola'
+            map: null
           }
         },
-        methods: {
-          changeMessage() {
-            this.message = 'Adios'
-          }
+        mounted() {
+          this.map = L.map('map').setView([6, 10], 1.5);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(this.map);
         }
       });
 
