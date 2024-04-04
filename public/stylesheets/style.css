@@ -6,17 +6,29 @@ body {
 a {
   color: #00B7FF;
 }
-.na{
-  margin-left: 15%;
-  color: rgb(69, 69, 213);
-  text-decoration: none;
-}
-.titulo{
-  color:aqua;
-  font-size: 50px;
+.titulo {
   text-align: center;
+  font-size: 2vw; 
+  color: #333;
+  margin-bottom: 2%;
 }
-.nav{
-  background-color: rgb(154, 185, 243);
-  border: 1px solid rgb(123, 122, 122);
+
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+.na {
+  text-decoration: none;
+  color: #333;
+  padding: 1.25% 2%;
+  margin: 0 1.5%;
+  border-radius: 0.5vw;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+
+.na:hover {
+  background-color: #ddd;
 }
