@@ -1,6 +1,14 @@
 extends layout
 
 block content
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='https://unpkg.com/leaflet/dist/leaflet.css')
+    script(src='https://unpkg.com/leaflet/dist/leaflet.js')
+    title Document
+  body
   #inicio-container
     a(href="/", id="inicio") Inicio
   
@@ -9,8 +17,25 @@ block content
       h1 Detengamos el malgasto de agua
       p Ayuda a conservar el agua utilizando sabiamente este recurso vital.
 
-    Mapa
+    div(id='map') 
 
     .data
       h2 Datos sobre el malgasto de agua
       p En todos los países se malgasta agua, pero en este momento España está en sequía, así que deberíamos detener todo el malgasto.
+    
+    
+    script(type='module').
+      import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+      createApp({
+        data() {
+          return {
+            map: null
+          }
+        },
+        mounted() {
+          this.map = L.map('map').setView([6, 10], 1.5)
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(this.map)
+        }
+      }).mount('#map')
