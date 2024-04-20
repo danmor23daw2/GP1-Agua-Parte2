@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  body
+    header.head
+      h1 Apoya a la causa
+
+    br 
+
+    #cente2
+      h1 El Nombre Que Deseas Eliminar:
+      form(action="/eliminar", method="POST")
+        input.text(type="text", name="nom")
+        input.submit(type="submit", value="eliminar")
+  a(href="/pag3") Firmar
