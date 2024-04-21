@@ -187,8 +187,33 @@ a {
   background-color: #c82333;
 }
 
+/*---------p4------------*/
 #form{
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+}
+#form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/*---------p2------------*/
+#container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%; 
+  margin: 0 auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.imgg{
+  margin-top: 1%;
+  width: 30%;
+  border-radius: 5%;
 }
