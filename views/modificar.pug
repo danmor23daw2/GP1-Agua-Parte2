@@ -2,7 +2,7 @@ extends layout
 
 block content
 body
-    header.head
+    header(class="head")
       h1 Apoya a la causa
 
     br
@@ -11,10 +11,10 @@ body
       h1 Modificar Nombre:
       form(action="/modifica", method="POST")
         label(for="nombreActual") Nombre Actual:
-        input.text(type="text", name="nombreActual", required)
+        input(class="text" type="text", name="nombreActual", required)
 
         label(for="nuevoNombre") Nuevo Nombre:
-        input.text(type="text", name="nuevoNombre", required)
+        input(class="text" type="text", name="nuevoNombre", required)
 
-        input.submit(type="submit", value="Modificar")
+        input(class="submit" type="submit", value="Modificar")
   a(href="/") Inicio

@@ -2,7 +2,7 @@ extends layout
 
 block content
   body
-    header.head
+    header(class="head")
       h1 Apoya a la causa
 
     br 
@@ -10,6 +10,6 @@ block content
     #cente2
       h1 El Nombre Que Deseas Eliminar:
       form(action="/eliminar", method="POST")
-        input.text(type="text", name="nom")
-        input.submit(type="submit", value="eliminar")
+        input(class="text" type="text", name="nom")
+        input(class="submit" type="submit", value="eliminar")
   a(href="/pag3") Firmar

@@ -1,15 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 100px;
+  font: 18px "Handlee";
+  background-color: #e0f2fe; 
 }
 
 a {
-  color: #00B7FF;
+  color: #000; 
 }
+
 .titulo {
   text-align: center;
-  font-size: 2vw; 
-  color: #333;
+  font-size: 3vw;
+  color: #000; 
   margin-bottom: 2%;
 }
 
@@ -20,7 +23,7 @@ a {
 
 .na {
   text-decoration: none;
-  color: #333;
+  color: #000; 
   padding: 1.25% 2%;
   margin: 0 1.5%;
   border-radius: 0.5vw;
@@ -28,10 +31,22 @@ a {
   transition: background-color 0.3s ease;
 }
 
-
 .na:hover {
-  background-color: #ddd;
+  background-color: #87ceeb;
 }
+
+.img {
+  width: 50%;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10%;
+  bottom: -10%;
+  }
+
+
 #inicio-container {
   display: flex;
   justify-content: center;
@@ -68,7 +83,7 @@ a {
 }
 
 .header p {
-  font-size: 16px;
+  font-size: 20px;
   color: #666;
 }
 
@@ -85,7 +100,7 @@ a {
 }
 
 .data p {
-  font-size: 16px;
+  font-size: 20px;
   color: #666;
 }
 #map{
@@ -94,13 +109,7 @@ a {
 
 /*---------p3------------*/
 
-
-* {
-  box-sizing: border-box;
-}
-
-
-header.head {
+.head {
   background-color: #007bff;
   color: white;
   text-align: center;
@@ -129,11 +138,11 @@ header.head {
 }
 
 
-form {
+.form {
   text-align: center;
 }
 
-input.text {
+.text {
   width: 100%;
   padding: 5px;
   margin-bottom: 10px;
@@ -141,7 +150,7 @@ input.text {
   border-radius: 4px;
 }
 
-input.submit {
+.submit {
   background-color: #007bff;
   color: white;
   padding: 1% 1.5%;
@@ -151,18 +160,18 @@ input.submit {
   transition: background-color 0.3s ease;
 }
 
-input.submit:hover {
+.submit:hover {
   background-color: #0056b3;
 }
 
-nav.eliminar1,
-nav.modificar1 {
+.eliminar1,
+.modificar1 {
   text-align: center;
   margin-top: 1.5rem;
 }
 
-a.eliminar,
-a.modificar {
+.eliminar,
+.modificar {
   display: inline-block;
   padding: 0.7% 1.1%;
   margin-right: 0.5rem;
@@ -170,18 +179,16 @@ a.modificar {
   color: white;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
-a.eliminar:hover,
-a.modificar:hover {
+.eliminar:hover,
+.modificar:hover {
   background-color: #c82333;
 }
 
-a[href="/"] {
-  display: block;
-  text-align: center;
-  margin-top: 3px;
-  color: #007bff;
-  font-weight: bold;
+#form{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
-

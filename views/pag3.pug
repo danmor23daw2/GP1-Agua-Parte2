@@ -1,8 +1,9 @@
 extends layout
 
 block content
-
-  header.head
+  #inicio-container
+    a(href="/", id="inicio") Inicio
+  header(class="head")
     h1(class="titulo")= title
   br
 
@@ -13,18 +14,15 @@ block content
   #cente2
     h1 Tu Nombre:
 
-    form(action="/desa", method="GET")
-      input.text(type="text", name="nom")
-      input.submit(type="submit", value="desa")
+    form(class="form" action="/desa", method="GET")
+      input(class="text" type="text", name="nom")
+      input(class="submit" type="submit", value="desa")
 
-  nav.eliminar1
+  nav(class="eliminar1")
     a(href="/eliminar", class="eliminar") Eliminar
 
   br
 
-  nav.modificar1
+  nav(class="modificar1")
     a(href="/modificar", class= "modificar" ) Modificar
 
-  br
-
-  a(href="/") Inicio
