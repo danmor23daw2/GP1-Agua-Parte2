@@ -1,7 +1,9 @@
 extends layout
 
 block content
-body
+  body
+    #inicio-container
+      a(href="/pag3", id="inicio") Apoya a la causa
     header(class="head")
       h1 Apoya a la causa
 
@@ -17,4 +19,3 @@ body
         input(class="text" type="text", name="nuevoNombre", required)
 
         input(class="submit" type="submit", value="Modificar")
-  a(href="/") Inicio
