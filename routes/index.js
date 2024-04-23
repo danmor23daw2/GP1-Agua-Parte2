@@ -10,6 +10,7 @@
       nom: String,
       email: String
   });
+  const Alumne = mongoose.model('Alumne', alumneSchema);
 
   const usuarioSchema = new mongoose.Schema({
       nombre: String,
@@ -154,8 +155,8 @@
       const user = await Usuario.findOne({ nombre: username, contrasena: password });
   
       if (user) {
-        // Aquí verifica si el usuario autenticado es un administrador
-        const isAdmin = user.esAdmin;
+        const isAdmin = (user.nombre === 'admin');
+        req.session.isAdmin = isAdmin;
         res.render('index', { title: 'GP1 Agua Parte 2', isAdmin });
       } else {
         console.log('Credenciales incorrectas');
@@ -166,6 +167,17 @@
       res.send("Problemas al iniciar sesión.");
     }
   });
+  router.get('/logout', function(req, res) {
+    req.session.destroy(function(err) {
+      if (err) {
+        console.error("Error al destruir la sesión:", err);
+        res.send("Problemas al cerrar la sesión.");
+      } else {
+        res.redirect("/");
+      }
+    });
+  });
+  
   
 
 
