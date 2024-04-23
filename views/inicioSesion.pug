@@ -2,7 +2,7 @@ extends layout
 
 block content
   div(id="form-container")
-    form(id="login-form", @submit.prevent="login")
+    form(id="login-form")
       div
         label(for="username") Usuario:
         br
@@ -13,7 +13,7 @@ block content
         br
         input(type="password", id="password", v-model="password", required)
       br
-      button(type="submit" class="submit") Iniciar Sesión
+      button(type="button" class="submit" @click="login()") Iniciar Sesión
 
   script(type='module').
     import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
@@ -26,13 +26,13 @@ block content
       },
       methods: {
         login() {
-          if (this.username === 'admin' && this.password === 'password') {
-            this.message = 'Inicio de sesión exitoso';
+          if (this.username === 'admin' && this.password === 'fjeclot') {
+            window.location.href = '/index';
+            console.log('funciona');
           } else {
-            this.message = 'Credenciales incorrectas';
+            console.log('Credenciales incorrectas');
+            window.location.href = window.location.href;
           }
         }
       }
-    });
-    mount('#login-form');
-
+    }).mount('#login-form');
