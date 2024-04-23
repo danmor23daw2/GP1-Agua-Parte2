@@ -10,12 +10,10 @@ block content
     br
 
     #cente2
-      h1 Modificar Nombre:
-      form(action="/modifica", method="POST")
-        label(for="nombreActual") Nombre Actual:
-        input(class="text" type="text", name="nombreActual", required)
-
-        label(for="nuevoNombre") Nuevo Nombre:
-        input(class="text" type="text", name="nuevoNombre", required)
-
-        input(class="submit" type="submit", value="Modificar")
+      h1 Modifica tu Nombre de la Lista
+      label Pon el correo del nombre y el nuevo nombre
+      form#formAddUser(name="afegirAlumne",method="post",action="/modificarAlumneBD")
+        input#inputUserName( class="text" type="text", placeholder="nom", name="nom")
+        
+        input#inputUserEmail( class="text" type="text", placeholder="email", name="email")
+        button#btnSubmit(class="submit" type="submit") submit

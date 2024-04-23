@@ -12,11 +12,11 @@ block content
       h2 Si quieres apoyar nuestra causa para que haya más medidas de prevención en pérdidas de agua y concienciar a más gente, puedes poner tu nombre aquí para apoyarnos. Podrás ver a todos los participantes de la causa.
 
   #cente2
-    h1 Tu Nombre:
-
-    form(class="form" action="/desa", method="GET")
-      input(class="text" type="text", name="nom")
-      input(class="submit" type="submit", value="desa")
+    h1= titol
+    form#formAddUser(name="afegirAlumne",method="post",action="/afegirAlumneBD")
+        input#inputUserName(class="text" type="text", placeholder="nom", name="nom")
+        input#inputUserEmail(class="text" type="text", placeholder="email", name="email")
+        button#btnSubmit(class="submit" type="submit") submit
 
   nav(class="eliminar1")
     a(href="/eliminar", class="eliminar") Eliminar

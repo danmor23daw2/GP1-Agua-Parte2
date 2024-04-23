@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  #inicio-container
+    a(href="/index", id="inicio") Inicio
+    br
+  h1.
+    Contribuidores
+  ul
+    each alumne, i in llistarAlumnes
+        li
+            a(href="mailto:#{alumne.email}")= alumne.nom
+    

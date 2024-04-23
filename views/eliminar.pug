@@ -10,7 +10,7 @@ block content
     br 
 
     #cente2
-      h1 El Nombre Que Deseas Eliminar:
-      form(action="/eliminar", method="POST")
-        input(class="text" type="text", name="nom")
-        input(class="submit" type="submit", value="eliminar")
+      h1 El Email del Nombre que quiere eliminar:
+      form#formAddUser(name="esborrarAlumne",method="post",action="/esborrarAlumneBD")        
+          input#inputUserEmail(class="text" type="text", placeholder="email", name="email")
+          button#btnSubmit(class="submit" type="submit") submit
