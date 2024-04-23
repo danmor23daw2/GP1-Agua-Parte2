@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    form(id="register-form", action="/register", method="POST")
+        div
+            label(for="new-username") Nuevo Usuario:
+            br
+            input(type="text", id="new-username", name="nombre", required)
+        br
+        div 
+            label(for="new-password") Nueva Contraseña:
+            br
+            input(type="password", id="new-password", name="contrasena", required)
+        br
+        button(type="submit" class="submit") Registrarse

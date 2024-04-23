@@ -13,7 +13,7 @@ const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('Connected to MongoDB');
+    console.log('Connected to MongoDB');
 });
 
 const app = express();
@@ -31,7 +31,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.use(function(req, res, next) {
-  next(createError(404));
+    next(createError(404));
 });
 
 if (app.get('env') === 'development') {

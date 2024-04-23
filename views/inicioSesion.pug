@@ -14,7 +14,7 @@ block content
         input(type="password", id="password", v-model="password", required)
       br
       button(type="button" class="submit" @click="login()") Iniciar Sesión
-
+      button(type="button" class="submit" @click="register()") Registrarse
   script(type='module').
     import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
     createApp({
@@ -33,6 +33,10 @@ block content
             console.log('Credenciales incorrectas');
             window.location.href = window.location.href;
           }
+        },
+        register() {
+          console.log('Registrarse');
+          window.location.href = '/register';
         }
       }
     }).mount('#login-form');

@@ -11,7 +11,14 @@ const alumneSchema = new mongoose.Schema({
     email: String
 });
 
-const Alumne = mongoose.model('Alumne', alumneSchema);
+const usuarioSchema = new mongoose.Schema({
+    nombre: String,
+    contrasena: String
+});
+
+const Usuario = mongoose.model('Usuario', usuarioSchema);
+
+module.exports = Usuario;
 
 router.get('/', function(req, res, next) {
   res.render('inicioSesion', { });
@@ -39,6 +46,10 @@ router.get('/pag3', function(req, res, next) {
 
 router.get('/pag4', function(req, res, next) {
   res.render('pag4', { });
+});
+
+router.get('/register', function(req, res, next) {
+  res.render('register', { });
 });
 
 router.get('/modificar', function(req, res, next) {
@@ -106,7 +117,6 @@ router.post('/modificarAlumneBD', function(req, res) {
 
 router.post('/esborrarAlumneBD', function(req, res) {
     var email = req.body.email;
-
     Alumne.findOneAndDelete({ email: email })
         .then(() => {
             operacions++;
@@ -119,5 +129,22 @@ router.post('/esborrarAlumneBD', function(req, res) {
 });
 
 //Mongoose -------------------------------------------------------
+
+//MOngoose--------------------------------------------------------
+
+router.post('/register', function(req, res) {
+    const { nombre, contrasena } = req.body;
+
+    const nuevoUsuario = new Usuario({ nombre, contrasena });
+
+    nuevoUsuario.save()
+        .then(() => {
+            res.redirect("/");
+        })
+        .catch(err => {
+            console.error("Error al guardar el usuario:", err);
+            res.send("Problemas al registrar el usuario.");
+        });
+});
 
 module.exports = router;
