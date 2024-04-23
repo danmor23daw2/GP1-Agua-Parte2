@@ -191,6 +191,7 @@ a {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-left: 1%;
 }
 
 .submit:hover {
@@ -280,3 +281,8 @@ a {
   margin-bottom: 5%;
 }
 
+.logout{
+  margin-top: -30%;
+  position: absolute;
+  text-decoration: none;
+}

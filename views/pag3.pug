@@ -17,12 +17,12 @@ block content
         input#inputUserName(class="text" type="text", placeholder="nom", name="nom")
         input#inputUserEmail(class="text" type="text", placeholder="email", name="email")
         button#btnSubmit(class="submit" type="submit") submit
+  if isAdmin
+    nav(class="eliminar1")
+      a(href="/eliminar", class="eliminar") Eliminar
 
-  nav(class="eliminar1")
-    a(href="/eliminar", class="eliminar") Eliminar
+    br
 
-  br
-
-  nav(class="modificar1")
-    a(href="/modificar", class= "modificar" ) Modificar
+    nav(class="modificar1")
+      a(href="/modificar", class= "modificar" ) Modificar
 

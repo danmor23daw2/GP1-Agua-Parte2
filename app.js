@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
@@ -13,8 +14,9 @@ const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('Connected to MongoDB');
+    console.log('Connected to MongoDB');
 });
+
 
 const app = express();
 
@@ -27,11 +29,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+    secret: 'UnaCadenaMuyLargaYDifícilDeAdivinar123456', 
+    resave: false,
+    saveUninitialized: false
+  }));
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.use(function(req, res, next) {
-  next(createError(404));
+    next(createError(404));
 });
 
 if (app.get('env') === 'development') {
