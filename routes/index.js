@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 
 let operacions = 0;
 
+const { Campo, Impacto } = require('./classes')
+
 const alumneSchema = new mongoose.Schema({
     nom: String,
     email: String
