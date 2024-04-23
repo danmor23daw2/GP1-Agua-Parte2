@@ -2,39 +2,31 @@ extends layout
 
 block content
   #inicio-container
-    a(href="/", id="inicio") Inicio
-  div(id="form-container")
-    form(id="login-form", @submit.prevent="login")
-      div
-        label(for="username") Usuario:
-        br
-        input(type="text", id="username", v-model="username", required)
-      br
-      div 
-        label(for="password") Contraseña:
-        br
-        input(type="password", id="password", v-model="password", required)
-      br
-      button(type="submit" class="submit") Iniciar Sesión
+    a(href="/index", id="inicio") Inicio
 
-  script(type='module').
-    import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
-    createApp({
-      data() {
-        return {
-          username: '',
-          password: '',
-        };
-      },
-      methods: {
-        login() {
-          if (this.username === 'admin' && this.password === 'password') {
-            this.message = 'Inicio de sesión exitoso';
-          } else {
-            this.message = 'Credenciales incorrectas';
-          }
-        }
-      }
-    });
-    mount('#login-form');
+  div#container
+    .texto-container
+      h2 Tipos de Riego y Consumo de Agua
+      p El riego es crucial para mantener el crecimiento saludable de las plantas, pero es importante considerar los diferentes métodos de riego y su impacto en el consumo de agua.
+    .texto-imagen-container
+      h3 Riego por Aspersión
+      p El riego por aspersión es un método común que implica rociar agua en el aire, simulando la lluvia. Aunque es conveniente y cubre grandes áreas, puede resultar en un alto consumo de agua debido a la evaporación y al agua que cae en áreas no deseadas, como senderos y pavimentos.
+      img.imgg(src="https://hablemosdeculturas.com/wp-content/uploads/2018/10/Riego-por-Aspersion3.png")
 
+    .texto-imagen-container
+      h3 Riego por Goteo
+      p El riego por goteo es un método eficiente que suministra agua directamente a la base de las plantas a través de tubos o mangueras perforadas. Este método reduce significativamente el desperdicio de agua al entregarla directamente a las raíces de las plantas, evitando la evaporación y el exceso de agua en áreas no deseadas.
+      img.imgg(src="https://www.tiendafotovoltaica.es/WebRoot/StoreES/Shops/61359426/53AC/2D3D/0F41/FBCC/007B/C0A8/2ABB/0E5C/riego_solar_por_goteo_huertos.jpg")
+    .texto-imagen-container
+      h3 Riego Subterráneo
+      p El riego subterráneo es similar al riego por goteo, pero el agua se suministra a través de tuberías enterradas debajo del suelo. Este método es altamente eficiente ya que minimiza la evaporación y la pérdida de agua debido al viento. Además, ayuda a mantener un nivel constante de humedad en el suelo, promoviendo un crecimiento saludable de las plantas.
+      img.imgg(src="https://i.pinimg.com/originals/29/c8/72/29c8728d6dd978ea95d86402d5079068.jpg")
+    .metodo-consume
+      h2 Por qué usar Métodos de Riego que Consumen Menos Agua
+      p El uso de métodos de riego que consumen menos agua no solo ayuda a conservar este recurso vital, sino que también ofrece varios beneficios adicionales:
+    
+      ul
+        li Reduce el desperdicio de agua, lo que es especialmente importante en regiones con escasez de agua o durante períodos de sequía.
+        li Ayuda a mantener un equilibrio saludable en el ecosistema, evitando la sobreexplotación de recursos hídricos.
+        li Puede ahorrar dinero a largo plazo al reducir las facturas de agua y los costos de mantenimiento del jardín.
+        li Promueve un crecimiento más saludable de las plantas al entregar agua de manera precisa y controlada, evitando problemas como la sobrehumedad o la falta de riego.

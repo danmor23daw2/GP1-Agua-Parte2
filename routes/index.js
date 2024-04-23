@@ -5,10 +5,13 @@ var router = express.Router();
 const { Campo, Impacto } = require('./classes.js'); 
 
 /* GET home page. */
+
 router.get('/', function(req, res, next) {
+  res.render('inicioSesion', { });
+});
+router.get('/index', function(req, res, next) {
   res.render('index', { title: 'GP1 Agua Parte 2' });
 });
-
 router.get('/pag1', function(req, res, next) {
   res.render('pag1', { });
 });

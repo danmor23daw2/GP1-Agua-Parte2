@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  div(id="form-container")
+    form(id="login-form", @submit.prevent="login")
+      div
+        label(for="username") Usuario:
+        br
+        input(type="text", id="username", v-model="username", required)
+      br
+      div 
+        label(for="password") Contraseña:
+        br
+        input(type="password", id="password", v-model="password", required)
+      br
+      button(type="submit" class="submit") Iniciar Sesión
+
+  script(type='module').
+    import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+    createApp({
+      data() {
+        return {
+          username: '',
+          password: '',
+        };
+      },
+      methods: {
+        login() {
+          if (this.username === 'admin' && this.password === 'password') {
+            this.message = 'Inicio de sesión exitoso';
+          } else {
+            this.message = 'Credenciales incorrectas';
+          }
+        }
+      }
+    });
+    mount('#login-form');
+

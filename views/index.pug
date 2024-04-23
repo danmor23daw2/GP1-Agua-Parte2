@@ -1,12 +1,17 @@
 extends layout
 
 block content
+  .hero
+    img(src="https://static.vecteezy.com/system/resources/previews/017/339/034/original/water-drop-icon-3d-free-png.png" alt="Imagen de agua escasa" class="img")
+    h1 Un futuro sin agua no es futuro
+
   h1(class="titulo")= title
 
-  div.nav
-    a(href="/pag4", class="na") Inicio de sesion
+  .nav
     a(href="/pag1", class="na") Malgasto en España
-    a(href="/pag2", class="na") Malgasto de Agua y Impacto Ambiental
-    a(href="/pag3", class="na") Apoya a la Causa
+    a(href="/pag2", class="na") Malgasto y Impacto Ambiental
+    a(href="/pag4", class="na") Tipos de Riego
 
-  img(src="https://www.acueductosca.com/wp-content/uploads/2020/12/Agua-potable-flujo-todos-los-dias-scaled.jpg", class="img")
+
+  .cta
+    a(href="/pag3", class="btn") Apoya a la Causa
